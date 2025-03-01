@@ -22,6 +22,9 @@
             {{ curso.materiais.duracao }}
           </p>
         </div>
+        <span class="accordion-icon" :class="{ rotate: activeIndex === index }">
+          &#x276F;
+        </span>
       </div>
       <div v-show="activeIndex === index" class="accordion-content">
         <p>Conteúdo detalhado do curso</p>
@@ -73,6 +76,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
 }
 
 .accordion-header-content {
@@ -84,5 +88,16 @@ h3 {
 .accordion-content {
   padding: 10px;
   background: #fff;
+}
+.accordion-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  transform: rotate(-90deg);
+}
+
+.accordion-icon.rotate {
+  transform: rotate(90deg);
 }
 </style>
