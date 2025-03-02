@@ -40,7 +40,6 @@
 
 <script>
 import AccordionSubGrupo from "@/components/AccordionSubGrupo.vue";
-import { getSubGroups } from "@/services/cursos";
 export default {
   name: "AccordionSubGrupo",
   components: {
@@ -72,7 +71,10 @@ export default {
 
     async loadSubGroups(index) {
       try {
-        const subGrupoData = await getSubGroups(this.subGrupos[index].id);
+        const subGrupoData = await this.$store.dispatch(
+          "fetchSubGrupos",
+          this.subGrupos[index].id
+        );
         this.$set(this.subGrupos, index, {
           ...this.subGrupos[index],
           filhos: subGrupoData,
