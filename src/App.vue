@@ -57,10 +57,11 @@ body {
   margin-top: 60px;
 }
 h2 {
+  font-family: cursive;
   color: #a9abad;
   text-align: left;
 }
 h2 span {
-  border-bottom: 5px solid #a505f0;
+  border-bottom: 3px solid #a505f0;
 }
 </style>

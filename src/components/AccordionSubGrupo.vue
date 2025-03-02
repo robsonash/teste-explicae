@@ -2,7 +2,10 @@
   <div>
     <div v-if="subGrupos && subGrupos.length > 0">
       <div v-for="(subGrupo, index) in subGrupos" :key="index" class="subgrupo">
-        <div class="subgrupo-header" @click="toggle(index)">
+        <div
+          :class="[{ active: activeIndex === index }, 'subgrupo-header']"
+          @click="toggle(index)"
+        >
           <div class="subgrupo-header-title">
             <span class="subgrupo-icon">
               {{ activeIndex === index ? "−" : "+" }}
@@ -26,7 +29,6 @@
           </div>
         </div>
         <div v-show="activeIndex === index" class="subgrupo-content">
-          <p>{{ subGrupo.descricao }}</p>
           <AccordionSubGrupo
             v-if="subGrupoLoaded[index]"
             :subGrupos="subGrupo.filhos || []"
@@ -34,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div v-else>Sem nenhuma informação</div>
+    <div v-else class="empty">Sem nenhuma informação</div>
   </div>
 </template>
 
@@ -89,14 +91,19 @@ export default {
 </script>
 
 <style scoped>
+h4 {
+  margin: 0px;
+}
 .subgrupo {
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   border-radius: 5px;
 }
-
+.subgrupo:last-child {
+  border-bottom: unset;
+}
 .subgrupo-header {
-  background: #f4f4f4;
+  background: #ffffff;
   padding: 10px;
   cursor: pointer;
   display: flex;
@@ -114,12 +121,18 @@ export default {
   transition: transform 0.3s ease;
 }
 .subgrupo-content {
-  padding: 10px;
+  padding: 20px;
   background: #fff;
 }
 .subgrupo-header-title {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.empty {
+  color: #a9abad;
+}
+.active {
+  background: #eccbfc;
 }
 </style>

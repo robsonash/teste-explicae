@@ -35,6 +35,7 @@
             v-if="subGrupos[curso.id]"
             :subGrupos="subGrupos[curso.id] || []"
           />
+          <div v-else class="empty">Sem nenhuma informação</div>
         </div>
       </div>
     </div>
@@ -97,13 +98,14 @@ h3 {
 }
 
 .accordion-header {
-  background: #f4f4f4;
-  padding: 10px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  padding: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .accordion-header-content {
@@ -113,18 +115,25 @@ h3 {
 }
 
 .accordion-content {
+  margin: 10px;
   padding: 10px;
   background: #fff;
+  border: 1px solid #ccc;
 }
 .accordion-icon {
   position: absolute;
-  right: 10px;
+  right: 20px;
   font-size: 20px;
+  color: #a9abad;
   transition: transform 0.3s ease;
   transform: rotate(-90deg);
 }
 
 .accordion-icon.rotate {
   transform: rotate(90deg);
+}
+
+.empty {
+  color: #a9abad;
 }
 </style>
