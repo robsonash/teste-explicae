@@ -1,20 +1,47 @@
-export function fetchCursos() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve([
-        {
-          title: "1. Interpretação de textos",
-          aulas: { quantidade: 1193, duracao: "100h 22m" },
-          exercicios: { quantidade: 181, duracao: "79h 12m" },
-          materiais: { quantidade: 53, duracao: "86h 03m" },
-        },
-        {
-          title: "2. Matemática para Concursos",
-          aulas: { quantidade: 875, duracao: "85h 45m" },
-          exercicios: { quantidade: 220, duracao: "95h 30m" },
-          materiais: { quantidade: 67, duracao: "102h 15m" },
-        },
-      ]);
-    }, 1000);
-  });
-}
+export const cursosMock = [
+  {
+    id: 1,
+    title: "1. Interpretação de textos",
+    aulas: { quantidade: 1193, duracao: "100h 22m" },
+    exercicios: { quantidade: 181, duracao: "79h 12m" },
+    materiais: { quantidade: 53, duracao: "86h 03m" },
+    isSubGroup: false,
+    subGroupId: null,
+  },
+  {
+    id: 2,
+    title: "2. Matemática para Concursos",
+    aulas: { quantidade: 875, duracao: "85h 45m" },
+    exercicios: { quantidade: 220, duracao: "95h 30m" },
+    materiais: { quantidade: 67, duracao: "102h 15m" },
+    isSubGroup: false,
+    subGroupId: null,
+  },
+  {
+    id: 12,
+    title: "1.2 Matemática para Concursos",
+    aulas: { quantidade: 875, duracao: "85h 45m" },
+    exercicios: { quantidade: 220, duracao: "95h 30m" },
+    materiais: { quantidade: 67, duracao: "102h 15m" },
+    isSubGroup: true,
+    subGroupId: 1,
+  },
+  {
+    id: 13,
+    title: "1.3 Matemática para Concursos",
+    aulas: { quantidade: 875, duracao: "85h 45m" },
+    exercicios: { quantidade: 220, duracao: "95h 30m" },
+    materiais: { quantidade: 67, duracao: "102h 15m" },
+    isSubGroup: true,
+    subGroupId: 1,
+  },
+  {
+    id: 14,
+    title: "1.3.1 Matemática para Concursos",
+    aulas: { quantidade: 875, duracao: "85h 45m" },
+    exercicios: { quantidade: 220, duracao: "95h 30m" },
+    materiais: { quantidade: 67, duracao: "102h 15m" },
+    isSubGroup: true,
+    subGroupId: 13,
+  },
+];
