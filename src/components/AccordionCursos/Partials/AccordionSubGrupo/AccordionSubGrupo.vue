@@ -12,23 +12,12 @@
             </span>
             <h4>{{ subGrupo.title }}</h4>
           </div>
-          <div v-if="activeIndex !== index" class="accordion-header-content">
-            <p>
-              Aulas: {{ subGrupo.aulas.quantidade }} |
-              <strong>{{ subGrupo.aulas.duracao }}</strong>
-            </p>
-            <p>
-              Exercícios:
-              <strong
-                >{{ subGrupo.exercicios.quantidade }} |
-                {{ subGrupo.exercicios.duracao }}</strong
-              >
-            </p>
-            <p>
-              Materiais: {{ subGrupo.materiais.quantidade }} |
-              <strong>{{ subGrupo.materiais.duracao }}</strong>
-            </p>
-          </div>
+          <HeaderContent
+            :curso="subGrupo"
+            :useActiveCheck="true"
+            :index="index"
+            :activeIndex="activeIndex"
+          />
         </div>
         <transition name="accordion">
           <div v-show="activeIndex === index" class="subgrupo-content">
@@ -46,10 +35,13 @@
 
 <script>
 import AccordionSubGrupo from "@/components/AccordionCursos/Partials/AccordionSubGrupo/AccordionSubGrupo.vue";
+import HeaderContent from "@/components/AccordionCursos/Partials/HeaderContent/HeaderContent.vue";
+
 export default {
   name: "AccordionSubGrupo",
   components: {
     AccordionSubGrupo,
+    HeaderContent,
   },
   props: {
     subGrupos: {

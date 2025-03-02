@@ -9,20 +9,7 @@
           role="button"
         >
           <h3>{{ curso.title }}</h3>
-          <div class="accordion-header-content">
-            <p>
-              Aulas: {{ curso.aulas.quantidade }} |
-              <strong>{{ curso.aulas.duracao }}</strong>
-            </p>
-            <p>
-              Exercícios: {{ curso.exercicios.quantidade }} |
-              <strong>{{ curso.exercicios.duracao }}</strong>
-            </p>
-            <p>
-              Materiais: {{ curso.materiais.quantidade }} |
-              <strong>{{ curso.materiais.duracao }}</strong>
-            </p>
-          </div>
+          <HeaderContent :curso="curso" />
           <span
             class="accordion-icon"
             :class="{ rotate: activeIndexes[index] }"
@@ -46,10 +33,12 @@
 
 <script>
 import AccordionSubGrupo from "@/components/AccordionCursos/Partials/AccordionSubGrupo/AccordionSubGrupo.vue";
+import HeaderContent from "@/components/AccordionCursos/Partials/HeaderContent/HeaderContent.vue";
 
 export default {
   components: {
     AccordionSubGrupo,
+    HeaderContent,
   },
   props: {
     cursos: {

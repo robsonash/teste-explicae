@@ -1,0 +1,5 @@
+.accordion-header-content {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}

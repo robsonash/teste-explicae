@@ -25,12 +25,6 @@ h3 {
   border-radius: 5px 5px 0px 0px;
 }
 
-.accordion-header-content {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
 .accordion-content {
   margin: 10px;
   padding: 10px;
