@@ -12,7 +12,7 @@
             </span>
             <h4>{{ subGrupo.title }}</h4>
           </div>
-          <div class="accordion-header-content">
+          <div v-if="activeIndex !== index" class="accordion-header-content">
             <p>
               <strong>Aulas:</strong> {{ subGrupo.aulas.quantidade }} |
               {{ subGrupo.aulas.duracao }}
