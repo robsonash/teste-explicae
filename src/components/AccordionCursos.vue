@@ -11,16 +11,16 @@
           <h3>{{ curso.title }}</h3>
           <div class="accordion-header-content">
             <p>
-              <strong>Aulas:</strong> {{ curso.aulas.quantidade }} |
-              {{ curso.aulas.duracao }}
+              Aulas: {{ curso.aulas.quantidade }} |
+              <strong>{{ curso.aulas.duracao }}</strong>
             </p>
             <p>
-              <strong>Exercícios:</strong> {{ curso.exercicios.quantidade }} |
-              {{ curso.exercicios.duracao }}
+              Exercícios: {{ curso.exercicios.quantidade }} |
+              <strong>{{ curso.exercicios.duracao }}</strong>
             </p>
             <p>
-              <strong>Materiais:</strong> {{ curso.materiais.quantidade }} |
-              {{ curso.materiais.duracao }}
+              Materiais: {{ curso.materiais.quantidade }} |
+              <strong>{{ curso.materiais.duracao }}</strong>
             </p>
           </div>
           <span
@@ -111,7 +111,7 @@ h3 {
 
 .accordion-header-content {
   display: flex;
-  gap: 5px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 

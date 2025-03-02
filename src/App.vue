@@ -48,6 +48,9 @@ export default {
 body {
   background: #eff0f0;
 }
+p {
+  margin: 5px 0px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

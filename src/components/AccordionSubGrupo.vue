@@ -14,17 +14,19 @@
           </div>
           <div v-if="activeIndex !== index" class="accordion-header-content">
             <p>
-              <strong>Aulas:</strong> {{ subGrupo.aulas.quantidade }} |
-              {{ subGrupo.aulas.duracao }}
+              Aulas: {{ subGrupo.aulas.quantidade }} |
+              <strong>{{ subGrupo.aulas.duracao }}</strong>
             </p>
             <p>
-              <strong>Exercícios:</strong>
-              {{ subGrupo.exercicios.quantidade }} |
-              {{ subGrupo.exercicios.duracao }}
+              Exercícios:
+              <strong
+                >{{ subGrupo.exercicios.quantidade }} |
+                {{ subGrupo.exercicios.duracao }}</strong
+              >
             </p>
             <p>
-              <strong>Materiais:</strong> {{ subGrupo.materiais.quantidade }} |
-              {{ subGrupo.materiais.duracao }}
+              Materiais: {{ subGrupo.materiais.quantidade }} |
+              <strong>{{ subGrupo.materiais.duracao }}</strong>
             </p>
           </div>
         </div>
@@ -113,7 +115,7 @@ h4 {
 }
 .accordion-header-content {
   display: flex;
-  gap: 5px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 .subgrupo-icon {
@@ -128,7 +130,6 @@ h4 {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 10px;
 }
 .empty {
   color: #a9abad;
