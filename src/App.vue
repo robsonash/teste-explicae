@@ -10,7 +10,6 @@
 
 <script>
 import AccordionCursos from "@/components/AccordionCursos.vue";
-import { getCursos } from "@/services/cursos";
 
 export default {
   name: "App",
@@ -19,28 +18,28 @@ export default {
   },
   data() {
     return {
-      cursos: [],
       loading: true,
     };
   },
   computed: {
     _cursos() {
-      return this.cursos;
+      return this.$store.getters.cursos;
     },
   },
   methods: {
     async fetchCursos() {
       try {
-        this.cursos = await getCursos();
+        this.loading = true;
+        await this.$store.dispatch("fetchCursos");
       } catch (error) {
-        console.error("Erro ao carregar cursos principais:", error);
+        console.error("Erro ao carregar cursos:", error);
       } finally {
         this.loading = false;
       }
     },
   },
   async created() {
-    await this.fetchCursos(); // Chama fetchCursos e aguarda a conclusão
+    await this.fetchCursos();
   },
 };
 </script>
