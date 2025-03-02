@@ -111,11 +111,6 @@ export default {
   font-size: 20px;
   transition: transform 0.3s ease;
 }
-
-.subgrupo-icon.rotate {
-  transform: rotate(90deg);
-}
-
 .subgrupo-content {
   padding: 10px;
   background: #fff;
