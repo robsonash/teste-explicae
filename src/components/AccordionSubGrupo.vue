@@ -30,12 +30,14 @@
             </p>
           </div>
         </div>
-        <div v-show="activeIndex === index" class="subgrupo-content">
-          <AccordionSubGrupo
-            v-if="subGrupoLoaded[index]"
-            :subGrupos="subGrupo.filhos || []"
-          />
-        </div>
+        <transition name="accordion">
+          <div v-show="activeIndex === index" class="subgrupo-content">
+            <AccordionSubGrupo
+              v-if="subGrupoLoaded[index]"
+              :subGrupos="subGrupo.filhos || []"
+            />
+          </div>
+        </transition>
       </div>
     </div>
     <div v-else class="empty">Sem nenhuma informação</div>
@@ -98,7 +100,7 @@ h4 {
 }
 .subgrupo {
   border-bottom: 1px solid #ccc;
-  margin-bottom: 10px;
+
   border-radius: 5px;
 }
 .subgrupo:last-child {
@@ -123,7 +125,7 @@ h4 {
   transition: transform 0.3s ease;
 }
 .subgrupo-content {
-  padding: 20px 0px;
+  padding: 10px 0px;
   background: #fff;
 }
 .subgrupo-header-title {
@@ -136,5 +138,22 @@ h4 {
 }
 .active {
   background: #eccbfc;
+}
+.accordion-enter-active,
+.accordion-leave-active {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  overflow: hidden;
+}
+
+.accordion-enter,
+.accordion-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+
+.accordion-enter-to,
+.accordion-leave {
+  max-height: 300px;
+  opacity: 1;
 }
 </style>

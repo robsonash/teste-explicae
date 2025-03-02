@@ -30,13 +30,15 @@
             &#x276F;
           </span>
         </div>
-        <div v-show="activeIndexes[index]" class="accordion-content">
-          <AccordionSubGrupo
-            v-if="subGrupos[curso.id]"
-            :subGrupos="subGrupos[curso.id] || []"
-          />
-          <div v-else class="empty">Sem nenhuma informação</div>
-        </div>
+        <transition name="accordion">
+          <div v-show="activeIndexes[index]" class="accordion-content">
+            <AccordionSubGrupo
+              v-if="subGrupos[curso.id]"
+              :subGrupos="subGrupos[curso.id] || []"
+            />
+            <div v-else class="empty">Sem nenhuma informação</div>
+          </div>
+        </transition>
       </div>
     </div>
   </div>
@@ -89,6 +91,7 @@ h2 {
 
 h3 {
   margin-bottom: 5px;
+  margin-top: 2px;
 }
 
 .accordion {
@@ -137,5 +140,22 @@ h3 {
 
 .empty {
   color: #a9abad;
+}
+.accordion-enter-active,
+.accordion-leave-active {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  overflow: hidden;
+}
+
+.accordion-enter,
+.accordion-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+
+.accordion-enter-to,
+.accordion-leave {
+  max-height: 300px;
+  opacity: 1;
 }
 </style>
