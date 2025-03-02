@@ -92,9 +92,10 @@ h3 {
 }
 
 .accordion {
-  border: 1px solid #ccc;
   margin-bottom: 10px;
   border-radius: 5px;
+  padding-bottom: 10px;
+  background: #ffffff;
 }
 
 .accordion-header {
@@ -105,7 +106,7 @@ h3 {
   padding: 10px;
   background: #ffffff;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .accordion-header-content {
@@ -118,7 +119,8 @@ h3 {
   margin: 10px;
   padding: 10px;
   background: #fff;
-  border: 1px solid #ccc;
+  border: 2px solid #cccccc80;
+  border-radius: 5px;
 }
 .accordion-icon {
   position: absolute;

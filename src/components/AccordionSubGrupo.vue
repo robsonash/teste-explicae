@@ -121,13 +121,14 @@ h4 {
   transition: transform 0.3s ease;
 }
 .subgrupo-content {
-  padding: 20px;
+  padding: 20px 0px;
   background: #fff;
 }
 .subgrupo-header-title {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: 10px;
 }
 .empty {
   color: #a9abad;
