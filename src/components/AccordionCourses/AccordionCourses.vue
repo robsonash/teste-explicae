@@ -19,11 +19,11 @@
         </div>
         <transition name="accordion">
           <div v-show="activeIndexes[index]" class="accordion-content">
-            <AccordionSubGrupo
+            <AccordionSubGroup
               v-if="subGrupos[curso.id]"
               :subGrupos="subGrupos[curso.id] || []"
             />
-            <div v-else class="empty">Sem nenhuma informação</div>
+            <div v-else class="empty">Dados não encontrados</div>
           </div>
         </transition>
       </div>
@@ -32,12 +32,13 @@
 </template>
 
 <script>
-import AccordionSubGrupo from "@/components/AccordionCursos/Partials/AccordionSubGrupo/AccordionSubGrupo.vue";
-import HeaderContent from "@/components/AccordionCursos/Partials/HeaderContent/HeaderContent.vue";
+import AccordionSubGroup from "@/components/AccordionCourses/Partials/AccordionSubGroup/AccordionSubGroup.vue";
+import HeaderContent from "@/components/AccordionCourses/Partials/HeaderContent/HeaderContent.vue";
 
 export default {
+  name: "AccordionCourses",
   components: {
-    AccordionSubGrupo,
+    AccordionSubGroup,
     HeaderContent,
   },
   props: {

@@ -3,18 +3,18 @@
     <div>
       <h2>Cadernos / <span>Língua Portuguesa</span></h2>
       <p v-if="loading">Carregando cursos...</p>
-      <AccordionCursos v-else :cursos="_cursos" />
+      <AccordionCourses v-else :cursos="_cursos" />
     </div>
   </div>
 </template>
 
 <script>
-import AccordionCursos from "@/components/AccordionCursos/AccordionCursos.vue";
+import AccordionCourses from "@/components/AccordionCourses/AccordionCourses.vue";
 
 export default {
   name: "App",
   components: {
-    AccordionCursos,
+    AccordionCourses,
   },
   data() {
     return {
