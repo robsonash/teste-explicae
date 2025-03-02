@@ -43,7 +43,6 @@
 
 <script>
 import AccordionSubGrupo from "@/components/AccordionSubGrupo.vue";
-import { getSubGroups } from "@/services/cursos";
 
 export default {
   components: {
@@ -61,13 +60,17 @@ export default {
       subGrupos: [],
     };
   },
+
   methods: {
     async toggle(index, cursoId) {
       this.$set(this.activeIndexes, index, !this.activeIndexes[index]);
 
       if (this.activeIndexes[index] && !this.subGrupos[cursoId]) {
         try {
-          const subGrupoData = await getSubGroups(cursoId);
+          const subGrupoData = await this.$store.dispatch(
+            "fetchSubGrupos",
+            cursoId
+          );
           this.$set(this.subGrupos, cursoId, subGrupoData);
         } catch (error) {
           console.error("Erro ao buscar subgrupo", error);
