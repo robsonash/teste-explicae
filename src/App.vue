@@ -3,14 +3,15 @@
     <div>
       <h2>Cadernos / <span>Língua Portuguesa</span></h2>
       <p v-if="loading">Carregando cursos...</p>
-      <AccordionCursos v-else :cursos="cursos" />
+      <AccordionCursos v-else :cursos="_cursos" />
     </div>
   </div>
 </template>
 
 <script>
 import AccordionCursos from "@/components/AccordionCursos.vue";
-import { fetchCursos } from "@/services/mockApi";
+import { getCursos } from "@/services/cursos";
+
 export default {
   name: "App",
   components: {
@@ -22,9 +23,24 @@ export default {
       loading: true,
     };
   },
+  computed: {
+    _cursos() {
+      return this.cursos;
+    },
+  },
+  methods: {
+    async fetchCursos() {
+      try {
+        this.cursos = await getCursos();
+      } catch (error) {
+        console.error("Erro ao carregar cursos principais:", error);
+      } finally {
+        this.loading = false;
+      }
+    },
+  },
   async created() {
-    this.cursos = await fetchCursos();
-    this.loading = false;
+    await this.fetchCursos(); // Chama fetchCursos e aguarda a conclusão
   },
 };
 </script>
