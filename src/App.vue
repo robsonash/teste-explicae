@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import AccordionCursos from "@/components/AccordionCursos.vue";
+import AccordionCursos from "@/components/AccordionCursos/AccordionCursos.vue";
 
 export default {
   name: "App",

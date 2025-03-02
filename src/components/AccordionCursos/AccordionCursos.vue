@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import AccordionSubGrupo from "@/components/AccordionSubGrupo.vue";
+import AccordionSubGrupo from "@/components/AccordionCursos/Partials/AccordionSubGrupo/AccordionSubGrupo.vue";
 
 export default {
   components: {
@@ -84,78 +84,4 @@ export default {
 };
 </script>
 
-<style scoped>
-h2 {
-  margin-bottom: 15px;
-}
-
-h3 {
-  margin-bottom: 5px;
-  margin-top: 2px;
-}
-
-.accordion {
-  margin-bottom: 10px;
-  border-radius: 5px;
-  padding-bottom: 10px;
-  background: #ffffff;
-}
-
-.accordion-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  padding: 10px;
-  background: #ffffff;
-  cursor: pointer;
-  border-radius: 5px 5px 0px 0px;
-}
-
-.accordion-header-content {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.accordion-content {
-  margin: 10px;
-  padding: 10px;
-  background: #fff;
-  border: 2px solid #cccccc80;
-  border-radius: 5px;
-}
-.accordion-icon {
-  position: absolute;
-  right: 20px;
-  font-size: 20px;
-  color: #a9abad;
-  transition: transform 0.3s ease;
-  transform: rotate(-90deg);
-}
-
-.accordion-icon.rotate {
-  transform: rotate(90deg);
-}
-
-.empty {
-  color: #a9abad;
-}
-.accordion-enter-active,
-.accordion-leave-active {
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-  overflow: hidden;
-}
-
-.accordion-enter,
-.accordion-leave-to {
-  max-height: 0;
-  opacity: 0;
-}
-
-.accordion-enter-to,
-.accordion-leave {
-  max-height: 300px;
-  opacity: 1;
-}
-</style>
+<style src="./style.css" scoped />
