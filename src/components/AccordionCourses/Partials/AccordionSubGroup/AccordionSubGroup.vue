@@ -23,7 +23,7 @@
           <div v-show="activeIndex === index" class="subGroup-content">
             <AccordionSubGroup
               v-if="subGroupLoaded[index]"
-              :subGroups="subGroup.filhos || []"
+              :subGroups="subGroup.children || []"
             />
           </div>
         </transition>
@@ -75,7 +75,7 @@ export default {
         );
         this.$set(this.subGroups, index, {
           ...this.subGroups[index],
-          filhos: subGroupData,
+          children: subGroupData,
         });
         this.$set(this.subGroupLoaded, index, true);
       } catch (error) {
