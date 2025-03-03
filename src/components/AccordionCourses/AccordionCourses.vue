@@ -1,15 +1,15 @@
 <template>
   <div>
     <div v-if="courses && courses.length > 0">
-      <div v-for="(curso, index) in courses" :key="index" class="accordion">
+      <div v-for="(course, index) in courses" :key="index" class="accordion">
         <div
           class="accordion-header"
-          @click="toggle(index, curso.id)"
+          @click="toggle(index, course.id)"
           :aria-expanded="activeIndexes[index]"
           role="button"
         >
-          <h3>{{ curso.title }}</h3>
-          <HeaderContent :course="curso" />
+          <h3>{{ course.title }}</h3>
+          <HeaderContent :course="course" />
           <span
             class="accordion-icon"
             :class="{ rotate: activeIndexes[index] }"
@@ -20,8 +20,8 @@
         <transition name="accordion">
           <div v-show="activeIndexes[index]" class="accordion-content">
             <AccordionSubGroup
-              v-if="subGrupos[curso.id]"
-              :subGrupos="subGrupos[curso.id] || []"
+              v-if="subGrupos[course.id]"
+              :subGrupos="subGrupos[course.id] || []"
             />
             <div v-else class="empty">Dados não encontrados</div>
           </div>
@@ -55,16 +55,16 @@ export default {
   },
 
   methods: {
-    async toggle(index, cursoId) {
+    async toggle(index, courseId) {
       this.$set(this.activeIndexes, index, !this.activeIndexes[index]);
 
-      if (this.activeIndexes[index] && !this.subGrupos[cursoId]) {
+      if (this.activeIndexes[index] && !this.subGrupos[courseId]) {
         try {
           const subGrupoData = await this.$store.dispatch(
             "fetchSubGrupos",
-            cursoId
+            courseId
           );
-          this.$set(this.subGrupos, cursoId, subGrupoData);
+          this.$set(this.subGrupos, courseId, subGrupoData);
         } catch (error) {
           console.error("Erro ao buscar subgrupo", error);
         }
