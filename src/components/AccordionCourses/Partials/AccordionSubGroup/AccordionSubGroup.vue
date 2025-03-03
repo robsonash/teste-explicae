@@ -29,7 +29,6 @@
         </transition>
       </div>
     </div>
-    <div v-else class="empty">Dados não encontrados</div>
   </div>
 </template>
 

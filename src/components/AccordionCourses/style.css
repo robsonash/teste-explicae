@@ -45,9 +45,6 @@ h3 {
   transform: rotate(90deg);
 }
 
-.empty {
-  color: #a9abad;
-}
 .accordion-enter-active,
 .accordion-leave-active {
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out;

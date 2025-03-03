@@ -24,7 +24,6 @@
               v-if="subGroup[course.id]"
               :subGroups="subGroup[course.id] || []"
             />
-            <div v-else class="empty">Dados não encontrados</div>
           </div>
         </transition>
       </div>

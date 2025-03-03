@@ -36,9 +36,7 @@ h4 {
   align-items: center;
   gap: 10px;
 }
-.empty {
-  color: #a9abad;
-}
+
 .active {
   background: #eccbfc;
 }
