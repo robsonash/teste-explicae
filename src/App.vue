@@ -3,7 +3,7 @@
     <div>
       <h2>Cadernos / <span>Língua Portuguesa</span></h2>
       <p v-if="loading">Carregando cursos...</p>
-      <AccordionCourses v-else :cursos="_cursos" />
+      <AccordionCourses v-else :courses="_courses" />
     </div>
   </div>
 </template>
@@ -22,15 +22,15 @@ export default {
     };
   },
   computed: {
-    _cursos() {
+    _courses() {
       return this.$store.getters.cursos;
     },
   },
   methods: {
-    async fetchCursos() {
+    async fetchCourses() {
       try {
         this.loading = true;
-        await this.$store.dispatch("fetchCursos");
+        await this.$store.dispatch("fetchCourses");
       } catch (error) {
         console.error("Erro ao carregar cursos:", error);
       } finally {
@@ -39,7 +39,7 @@ export default {
     },
   },
   async created() {
-    await this.fetchCursos();
+    await this.fetchCourses();
   },
 };
 </script>

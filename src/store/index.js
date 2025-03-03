@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { getCursos, getSubGroups } from "@/services/cursos";
+import { getCourses, getSubGroups } from "@/services/cursos";
 
 Vue.use(Vuex);
 
@@ -18,9 +18,9 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async fetchCursos({ commit }) {
+    async fetchCourses({ commit }) {
       try {
-        const cursos = await getCursos();
+        const cursos = await getCourses();
         commit("SET_CURSOS", cursos);
       } catch (error) {
         console.error("Erro ao carregar cursos principais:", error);

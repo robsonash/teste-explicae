@@ -13,7 +13,7 @@
             <h4>{{ subGrupo.title }}</h4>
           </div>
           <HeaderContent
-            :curso="subGrupo"
+            :course="subGrupo"
             :useActiveCheck="true"
             :index="index"
             :activeIndex="activeIndex"

@@ -4,16 +4,16 @@
     class="accordion-header-content"
   >
     <p>
-      Aulas: {{ curso.aulas.quantidade }} |
-      <strong>{{ curso.aulas.duracao }}</strong>
+      Aulas: {{ course.classes.amount }} |
+      <strong>{{ course.classes.duration }}</strong>
     </p>
     <p>
-      Exercícios: {{ curso.exercicios.quantidade }} |
-      <strong>{{ curso.exercicios.duracao }}</strong>
+      Exercícios: {{ course.exercises.amount }} |
+      <strong>{{ course.exercises.duration }}</strong>
     </p>
     <p>
-      Materiais: {{ curso.materiais.quantidade }} |
-      <strong>{{ curso.materiais.duracao }}</strong>
+      Materiais: {{ course.materials.amount }} |
+      <strong>{{ course.materials.duration }}</strong>
     </p>
   </div>
 </template>
@@ -21,7 +21,7 @@
 export default {
   name: "AccordionHeaderContent",
   props: {
-    curso: {
+    course: {
       type: Object,
       required: true,
     },

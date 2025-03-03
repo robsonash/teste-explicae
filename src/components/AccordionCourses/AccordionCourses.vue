@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-if="cursos && cursos.length > 0">
-      <div v-for="(curso, index) in cursos" :key="index" class="accordion">
+    <div v-if="courses && courses.length > 0">
+      <div v-for="(curso, index) in courses" :key="index" class="accordion">
         <div
           class="accordion-header"
           @click="toggle(index, curso.id)"
@@ -9,7 +9,7 @@
           role="button"
         >
           <h3>{{ curso.title }}</h3>
-          <HeaderContent :curso="curso" />
+          <HeaderContent :course="curso" />
           <span
             class="accordion-icon"
             :class="{ rotate: activeIndexes[index] }"
@@ -42,7 +42,7 @@ export default {
     HeaderContent,
   },
   props: {
-    cursos: {
+    courses: {
       type: Array,
       required: true,
     },

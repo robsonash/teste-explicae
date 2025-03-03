@@ -1,65 +1,65 @@
 {
-    "cursos": [
+    "courses": [
       {
         "id": 1,
         "title": "1. Interpretação de textos",
-        "aulas": { "quantidade": 1193, "duracao": "100h 22m" },
-        "exercicios": { "quantidade": 181, "duracao": "79h 12m" },
-        "materiais": { "quantidade": 53, "duracao": "86h 03m" },
+        "classes": { "amount": 1193, "duration": "100h 22m" },
+        "exercises": { "amount": 181, "duration": "79h 12m" },
+        "materials": { "amount": 53, "duration": "86h 03m" },
         "isSubGroup": false,
         "subGroupId": null
       },
       {
         "id": 2,
         "title": "2. Matemática para Concursos",
-        "aulas": { "quantidade": 875, "duracao": "85h 45m" },
-        "exercicios": { "quantidade": 220, "duracao": "95h 30m" },
-        "materiais": { "quantidade": 67, "duracao": "102h 15m" },
+        "classes": { "amount": 875, "duration": "85h 45m" },
+        "exercises": { "amount": 220, "duration": "95h 30m" },
+        "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": false,
         "subGroupId": null
       },
       {
         "id": 12,
         "title": "Competência 01: Palavras, imagem e Vida Social",
-        "aulas": { "quantidade": 875, "duracao": "85h 45m" },
-        "exercicios": { "quantidade": 220, "duracao": "95h 30m" },
-        "materiais": { "quantidade": 67, "duracao": "102h 15m" },
+        "classes": { "amount": 875, "duration": "85h 45m" },
+        "exercises": { "amount": 220, "duration": "95h 30m" },
+        "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
         "subGroupId": "1"
       },
       {
         "id": 13,
         "title": "Competência 02: Opniões e Pontos de Vista",
-        "aulas": { "quantidade": 875, "duracao": "85h 45m" },
-        "exercicios": { "quantidade": 220, "duracao": "95h 30m" },
-        "materiais": { "quantidade": 67, "duracao": "102h 15m" },
+        "classes": { "amount": 875, "duration": "85h 45m" },
+        "exercises": { "amount": 220, "duration": "95h 30m" },
+        "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
         "subGroupId": "1"
       },
       {
         "id": 14,
         "title": "1.1 Linguagem Verbal e Não-Verbal",
-        "aulas": { "quantidade": 875, "duracao": "85h 45m" },
-        "exercicios": { "quantidade": 220, "duracao": "95h 30m" },
-        "materiais": { "quantidade": 67, "duracao": "102h 15m" },
+        "classes": { "amount": 875, "duration": "85h 45m" },
+        "exercises": { "amount": 220, "duration": "95h 30m" },
+        "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
         "subGroupId": "13"
       },
       {
         "id": 15,
         "title": "1.2 Estratégias empregadas na construção do Texto",
-        "aulas": { "quantidade": 875, "duracao": "85h 45m" },
-        "exercicios": { "quantidade": 220, "duracao": "95h 30m" },
-        "materiais": { "quantidade": 67, "duracao": "102h 15m" },
+        "classes": { "amount": 875, "duration": "85h 45m" },
+        "exercises": { "amount": 220, "duration": "95h 30m" },
+        "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
         "subGroupId": "13"
       },
       {
         "id": 16,
         "title": "Referências Culturais",
-        "aulas": { "quantidade": 875, "duracao": "85h 45m" },
-        "exercicios": { "quantidade": 220, "duracao": "95h 30m" },
-        "materiais": { "quantidade": 67, "duracao": "102h 15m" },
+        "classes": { "amount": 875, "duration": "85h 45m" },
+        "exercises": { "amount": 220, "duration": "95h 30m" },
+        "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
         "subGroupId": "15"
       }
