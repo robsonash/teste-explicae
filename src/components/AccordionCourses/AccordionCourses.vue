@@ -20,8 +20,8 @@
         <transition name="accordion">
           <div v-show="activeIndexes[index]" class="accordion-content">
             <AccordionSubGroup
-              v-if="subGrupos[course.id]"
-              :subGrupos="subGrupos[course.id] || []"
+              v-if="subGroup[course.id]"
+              :subGroups="subGroup[course.id] || []"
             />
             <div v-else class="empty">Dados não encontrados</div>
           </div>
@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       activeIndexes: {},
-      subGrupos: [],
+      subGroup: [],
     };
   },
 
@@ -58,13 +58,13 @@ export default {
     async toggle(index, courseId) {
       this.$set(this.activeIndexes, index, !this.activeIndexes[index]);
 
-      if (this.activeIndexes[index] && !this.subGrupos[courseId]) {
+      if (this.activeIndexes[index] && !this.subGroup[courseId]) {
         try {
-          const subGrupoData = await this.$store.dispatch(
-            "fetchSubGrupos",
+          const subGroupData = await this.$store.dispatch(
+            "fetchSubGroups",
             courseId
           );
-          this.$set(this.subGrupos, courseId, subGrupoData);
+          this.$set(this.subGroup, courseId, subGroupData);
         } catch (error) {
           console.error("Erro ao buscar subgrupo", error);
         }

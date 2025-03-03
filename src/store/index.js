@@ -1,41 +1,41 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { getCourses, getSubGroups } from "@/services/cursos";
+import { getCourses, getSubGroups } from "@/services/courses";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    cursos: [],
-    subGrupos: {},
+    courses: [],
+    subGroups: {},
   },
   mutations: {
-    SET_CURSOS(state, cursos) {
-      state.cursos = cursos;
+    SET_COURSES(state, courses) {
+      state.courses = courses;
     },
-    SET_SUBGRUPOS(state, { cursoId, subGrupos }) {
-      Vue.set(state.subGrupos, cursoId, subGrupos);
+    SET_SUBGROUPS(state, { cursoId, subGroups }) {
+      Vue.set(state.subGroups, cursoId, subGroups);
     },
   },
   actions: {
     async fetchCourses({ commit }) {
       try {
-        const cursos = await getCourses();
-        commit("SET_CURSOS", cursos);
+        const courses = await getCourses();
+        commit("SET_COURSES", courses);
       } catch (error) {
         console.error("Erro ao carregar cursos principais:", error);
       }
     },
 
-    async fetchSubGrupos({ commit, state }, cursoId) {
+    async fetchSubGroups({ commit, state }, cursoId) {
       try {
-        const subGrupos = await getSubGroups(cursoId);
+        const subGroups = await getSubGroups(cursoId);
 
-        if (!subGrupos || subGrupos.length === 0) return;
+        if (!subGroups || subGroups.length === 0) return;
 
-        const existingSubGrupos = state.subGrupos[cursoId] || [];
+        const existingSubGrupos = state.subGroups[cursoId] || [];
 
-        const newSubGrupos = subGrupos.filter(
+        const newSubGrupos = subGroups.filter(
           (subGrupo) =>
             !existingSubGrupos.some((existing) => existing.id === subGrupo.id)
         );
@@ -44,9 +44,9 @@ export default new Vuex.Store({
           return newSubGrupos;
         }
 
-        commit("SET_SUBGRUPOS", {
+        commit("SET_SUBGROUPS", {
           cursoId,
-          subGrupos: [...existingSubGrupos, ...newSubGrupos],
+          subGroups: [...existingSubGrupos, ...newSubGrupos],
         });
         return newSubGrupos;
       } catch (error) {
@@ -56,7 +56,7 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    cursos: (state) => state.cursos,
-    subGrupos: (state) => state.subGrupos,
+    courses: (state) => state.courses,
+    subGroups: (state) => state.subGroups,
   },
 });

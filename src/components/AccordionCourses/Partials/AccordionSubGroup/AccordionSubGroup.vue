@@ -1,29 +1,29 @@
 <template>
   <div>
-    <div v-if="subGrupos && subGrupos.length > 0">
-      <div v-for="(subGrupo, index) in subGrupos" :key="index" class="subgrupo">
+    <div v-if="subGroups && subGroups.length > 0">
+      <div v-for="(subGroup, index) in subGroups" :key="index" class="subGroup">
         <div
-          :class="[{ active: activeIndex === index }, 'subgrupo-header']"
+          :class="[{ active: activeIndex === index }, 'subGroup-header']"
           @click="toggle(index)"
         >
-          <div class="subgrupo-header-title">
-            <span class="subgrupo-icon">
+          <div class="subGroup-header-title">
+            <span class="subGroup-icon">
               {{ activeIndex === index ? "−" : "+" }}
             </span>
-            <h4>{{ subGrupo.title }}</h4>
+            <h4>{{ subGroup.title }}</h4>
           </div>
           <HeaderContent
-            :course="subGrupo"
+            :course="subGroup"
             :useActiveCheck="true"
             :index="index"
             :activeIndex="activeIndex"
           />
         </div>
         <transition name="accordion">
-          <div v-show="activeIndex === index" class="subgrupo-content">
+          <div v-show="activeIndex === index" class="subGroup-content">
             <AccordionSubGroup
-              v-if="subGrupoLoaded[index]"
-              :subGrupos="subGrupo.filhos || []"
+              v-if="subGroupLoaded[index]"
+              :subGroups="subGroup.filhos || []"
             />
           </div>
         </transition>
@@ -44,7 +44,7 @@ export default {
     HeaderContent,
   },
   props: {
-    subGrupos: {
+    subGroups: {
       type: Array,
       required: true,
     },
@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       activeIndex: null,
-      subGrupoLoaded: {},
+      subGroupLoaded: {},
     };
   },
   methods: {
@@ -61,7 +61,7 @@ export default {
         this.activeIndex = null;
       } else {
         this.activeIndex = index;
-        if (!this.subGrupoLoaded[index]) {
+        if (!this.subGroupLoaded[index]) {
           this.loadSubGroups(index);
         }
       }
@@ -69,15 +69,15 @@ export default {
 
     async loadSubGroups(index) {
       try {
-        const subGrupoData = await this.$store.dispatch(
-          "fetchSubGrupos",
-          this.subGrupos[index].id
+        const subGroupData = await this.$store.dispatch(
+          "fetchSubGroups",
+          this.subGroups[index].id
         );
-        this.$set(this.subGrupos, index, {
-          ...this.subGrupos[index],
-          filhos: subGrupoData,
+        this.$set(this.subGroups, index, {
+          ...this.subGroups[index],
+          filhos: subGroupData,
         });
-        this.$set(this.subGrupoLoaded, index, true);
+        this.$set(this.subGroupLoaded, index, true);
       } catch (error) {
         console.error("Erro ao carregar subgrupos", error);
       }

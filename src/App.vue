@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     _courses() {
-      return this.$store.getters.cursos;
+      return this.$store.getters.courses;
     },
   },
   methods: {

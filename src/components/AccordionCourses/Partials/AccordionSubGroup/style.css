@@ -1,15 +1,15 @@
 h4 {
   margin: 0px;
 }
-.subgrupo {
+.subGroup {
   border-bottom: 1px solid #ccc;
 
   border-radius: 5px;
 }
-.subgrupo:last-child {
+.subGroup:last-child {
   border-bottom: unset;
 }
-.subgrupo-header {
+.subGroup-header {
   background: #ffffff;
   padding: 10px;
   cursor: pointer;
@@ -23,15 +23,15 @@ h4 {
   gap: 20px;
   flex-wrap: wrap;
 }
-.subgrupo-icon {
+.subGroup-icon {
   font-size: 20px;
   transition: transform 0.3s ease;
 }
-.subgrupo-content {
+.subGroup-content {
   padding: 10px 0px;
   background: #fff;
 }
-.subgrupo-header-title {
+.subGroup-header-title {
   display: flex;
   align-items: center;
   gap: 10px;
