@@ -11,6 +11,7 @@
           <h3>{{ course.title }}</h3>
           <HeaderContent :course="course" />
           <span
+            v-if="courses[index]?.haveChildren !== false"
             class="accordion-icon"
             :class="{ rotate: activeIndexes[index] }"
           >
@@ -56,6 +57,7 @@ export default {
 
   methods: {
     async toggle(index, courseId) {
+      if (this.courses[index]?.haveChildren === false) return;
       this.$set(this.activeIndexes, index, !this.activeIndexes[index]);
 
       if (this.activeIndexes[index] && !this.subGroup[courseId]) {

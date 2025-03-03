@@ -7,7 +7,7 @@
           @click="toggle(index)"
         >
           <div class="subGroup-header-title">
-            <span class="subGroup-icon">
+            <span v-if="subGroup.haveChildren !== false" class="subGroup-icon">
               {{ activeIndex === index ? "−" : "+" }}
             </span>
             <h4>{{ subGroup.title }}</h4>
@@ -57,13 +57,17 @@ export default {
   },
   methods: {
     toggle(index) {
+      if (this.subGroups[index]?.haveChildren === false) return;
+
       if (this.activeIndex === index) {
         this.activeIndex = null;
-      } else {
-        this.activeIndex = index;
-        if (!this.subGroupLoaded[index]) {
-          this.loadSubGroups(index);
-        }
+        return;
+      }
+
+      this.activeIndex = index;
+
+      if (!this.subGroupLoaded[index]) {
+        this.loadSubGroups(index);
       }
     },
 
