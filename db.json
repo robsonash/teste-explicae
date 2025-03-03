@@ -16,7 +16,8 @@
         "exercises": { "amount": 220, "duration": "95h 30m" },
         "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": false,
-        "subGroupId": null
+        "subGroupId": null,
+        "haveChildren": false
       },
       {
         "id": 12,
@@ -25,7 +26,8 @@
         "exercises": { "amount": 220, "duration": "95h 30m" },
         "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
-        "subGroupId": "1"
+        "subGroupId": "1",
+        "haveChildren": false
       },
       {
         "id": 13,
@@ -43,7 +45,8 @@
         "exercises": { "amount": 220, "duration": "95h 30m" },
         "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
-        "subGroupId": "13"
+        "subGroupId": "13",
+        "haveChildren": false
       },
       {
         "id": 15,
@@ -61,7 +64,8 @@
         "exercises": { "amount": 220, "duration": "95h 30m" },
         "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
-        "subGroupId": "15"
+        "subGroupId": "15",
+        "haveChildren": false
       }
     ]
   }
