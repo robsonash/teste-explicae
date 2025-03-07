@@ -41,10 +41,88 @@
       {
         "id": 14,
         "title": "1.1 Linguagem Verbal e Não-Verbal",
-        "classes": { "amount": 875, "duration": "85h 45m" },
+        "classes": { "amount": 4, "duration": "1h 0m" },
         "exercises": { "amount": 220, "duration": "95h 30m" },
         "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
+        "totalList": {
+          "classes": {
+          "title": "Teoria + questões orientadas",
+          "amount": 4, "duration": "01:00:00",
+          "list": [
+            {
+              "title": "Estrutura e Formação de Palavra 1",
+              "time": "00:10:00",
+              "done": true
+            },
+            {
+              "title": "Estrutura e Formação de Palavra 2",
+              "time": "00:10:00",
+              "done": true
+            },
+            {
+              "title": "Estrutura e Formação de Palavra 3",
+              "time": "00:10:00",
+              "done": false
+            },
+            {
+              "title": "Estrutura e Formação de Palavra 4: Um Passeio na Cozinha",
+              "time": "00:30:00",
+              "done": false
+            }
+          ]
+          },
+          "exercises": {  "title": "Exercícios + questões orientadas",
+          "amount": 4, "duration": "01:00:00",
+          "list": [
+            {
+              "title": "Estrutura e Formação de Palavra 1",
+              "time": "00:10:00",
+              "done": true
+            },
+            {
+              "title": "Estrutura e Formação de Palavra 2",
+              "time": "00:10:00",
+              "done": true
+            },
+            {
+              "title": "Estrutura e Formação de Palavra 3",
+              "time": "00:10:00",
+              "done": false
+            },
+            {
+              "title": "Estrutura e Formação de Palavra 4: Um Passeio na Cozinha",
+              "time": "00:30:00",
+              "done": false
+            }
+          ]
+          },
+          "materials": {  "title": "Materiais + questões orientadas",
+          "amount": 4, "duration": "01:00:00",
+          "list": [
+            {
+              "title": "Estrutura e Formação de Palavra 1",
+              "time": "00:10:00",
+              "done": true
+            },
+            {
+              "title": "Estrutura e Formação de Palavra 2",
+              "time": "00:10:00",
+              "done": true
+            },
+            {
+              "title": "Estrutura e Formação de Palavra 3",
+              "time": "00:10:00",
+              "done": false
+            },
+            {
+              "title": "Estrutura e Formação de Palavra 4: Um Passeio na Cozinha",
+              "time": "00:30:00",
+              "done": false
+            }
+          ]
+          }
+        },
         "subGroupId": "13",
         "haveChildren": false
       },
