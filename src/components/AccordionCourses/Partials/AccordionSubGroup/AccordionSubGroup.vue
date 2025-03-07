@@ -7,7 +7,10 @@
           @click="toggle(index)"
         >
           <div class="subGroup-header-title">
-            <span v-if="subGroup.haveChildren !== false" class="subGroup-icon">
+            <span
+              v-if="subGroup.haveChildren !== false || subGroup.totalList"
+              class="subGroup-icon"
+            >
               {{ activeIndex === index ? "−" : "+" }}
             </span>
             <h4>{{ subGroup.title }}</h4>
@@ -17,6 +20,10 @@
             :useActiveCheck="true"
             :index="index"
             :activeIndex="activeIndex"
+          />
+          <TotalList
+            v-if="subGroup.totalList && activeIndex === index"
+            :totalList="subGroup.totalList"
           />
         </div>
         <transition name="accordion">
@@ -35,12 +42,14 @@
 <script>
 import AccordionSubGroup from "@/components/AccordionCourses/Partials/AccordionSubGroup/AccordionSubGroup.vue";
 import HeaderContent from "@/components/AccordionCourses/Partials/HeaderContent/HeaderContent.vue";
+import TotalList from "@/components/AccordionCourses/Partials/TotalList/TotalList.vue";
 
 export default {
   name: "AccordionSubGroup",
   components: {
     AccordionSubGroup,
     HeaderContent,
+    TotalList,
   },
   props: {
     subGroups: {
@@ -56,7 +65,19 @@ export default {
   },
   methods: {
     toggle(index) {
-      if (this.subGroups[index]?.haveChildren === false) return;
+      if (
+        this.subGroups[index]?.haveChildren === false &&
+        !this.subGroups[index]?.totalList
+      )
+        return;
+
+      if (
+        this.subGroups[index]?.haveChildren === false &&
+        this.subGroups[index]?.totalList
+      ) {
+        this.activeIndex = this.activeIndex === index ? null : index;
+        return;
+      }
 
       if (this.activeIndex === index) {
         this.activeIndex = null;
