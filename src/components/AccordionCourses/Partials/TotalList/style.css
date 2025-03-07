@@ -1,0 +1,77 @@
+.container {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin: 20px auto;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-family: Arial;
+}
+
+.tabs {
+  display: flex;
+  background: #e0c3fc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  transition: 0.3s;
+}
+
+.tabs button.active {
+  background: #a77ee3;
+  color: white;
+  border-radius: 5px;
+}
+
+.content {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.info-text {
+  font-size: 14px;
+  color: #666;
+  text-align: end;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.title {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.time {
+  font-size: 12px;
+  color: #777;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
