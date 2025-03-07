@@ -45,9 +45,10 @@
         "exercises": { "amount": 220, "duration": "95h 30m" },
         "materials": { "amount": 67, "duration": "102h 15m" },
         "isSubGroup": true,
-        "totalList": {
-          "classes": {
-          "title": "Teoria + questões orientadas",
+        "totalList": [
+          {
+          "title:": "Aulas",
+          "subtitle": "Teoria + questões orientadas",
           "amount": 4, "duration": "01:00:00",
           "list": [
             {
@@ -72,7 +73,9 @@
             }
           ]
           },
-          "exercises": {  "title": "Exercícios + questões orientadas",
+          {  
+          "title:": "Exercícios",
+          "subtitle": "Exercícios + questões orientadas",
           "amount": 4, "duration": "01:00:00",
           "list": [
             {
@@ -88,16 +91,18 @@
             {
               "title": "Estrutura e Formação de Palavra 3",
               "time": "00:10:00",
-              "done": false
+              "done": true
             },
             {
               "title": "Estrutura e Formação de Palavra 4: Um Passeio na Cozinha",
               "time": "00:30:00",
-              "done": false
+              "done": true
             }
           ]
           },
-          "materials": {  "title": "Materiais + questões orientadas",
+           {  
+          "title": "Materiais", 
+          "subtitle": "Materiais + questões orientadas",
           "amount": 4, "duration": "01:00:00",
           "list": [
             {
@@ -113,7 +118,7 @@
             {
               "title": "Estrutura e Formação de Palavra 3",
               "time": "00:10:00",
-              "done": false
+              "done": true
             },
             {
               "title": "Estrutura e Formação de Palavra 4: Um Passeio na Cozinha",
@@ -122,7 +127,7 @@
             }
           ]
           }
-        },
+        ],
         "subGroupId": "13",
         "haveChildren": false
       },
