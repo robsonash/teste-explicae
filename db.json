@@ -47,7 +47,7 @@
         "isSubGroup": true,
         "totalList": [
           {
-          "title:": "Aulas",
+          "title": "Aulas",
           "subtitle": "Teoria + questões orientadas",
           "amount": 4, "duration": "01:00:00",
           "list": [
@@ -74,7 +74,7 @@
           ]
           },
           {  
-          "title:": "Exercícios",
+          "title": "Exercícios",
           "subtitle": "Exercícios + questões orientadas",
           "amount": 4, "duration": "01:00:00",
           "list": [
