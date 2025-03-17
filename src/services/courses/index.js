@@ -12,8 +12,9 @@ export const getCourses = async () => {
 
 export const getSubGroups = async (parentId) => {
   try {
-    const response = await api.get();
-    return response.filter((course) => course.subGroupId === parentId);
+    const response = await api.get("/courses");
+    console.log("response", response);
+    return response.filter((course) => course.subGroupId == parentId);
   } catch (error) {
     alert("Erro ao buscar subgrupos:", error);
     throw error;

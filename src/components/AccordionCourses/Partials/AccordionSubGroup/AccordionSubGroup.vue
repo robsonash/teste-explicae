@@ -32,6 +32,7 @@
               v-if="subGroupLoaded[index]"
               :subGroups="subGroup.children || []"
             />
+            <div v-else class="loading">Carregando...</div>
           </div>
         </transition>
       </div>

@@ -24,6 +24,7 @@
               v-if="subGroup[course.id]"
               :subGroups="subGroup[course.id] || []"
             />
+            <div v-else class="loading">Carregando...</div>
           </div>
         </transition>
       </div>
