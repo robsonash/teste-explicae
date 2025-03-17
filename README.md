@@ -1,5 +1,9 @@
 # 🚀 Projeto Vue - Teste Explicae
 
+## Aplicação ao Vivo
+
+Você pode acessar a aplicação ao vivo [aqui](https://teste-explicae-theta.vercel.app/).
+
 ![Vue.js](https://img.shields.io/badge/Vue.js-3.0-green) ![JSON Server](https://img.shields.io/badge/JSON%20Server-Mock%20API-blue)
 
 Este é um projeto Vue que utiliza o **json-server** para simular uma API REST.
