@@ -1,6 +1,6 @@
 export const api = {
-  get: async (url) => {
-    const response = await fetch(`http://localhost:3000${url}`);
+  get: async () => {
+    const response = await fetch(process.env.VUE_APP_API_URL);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
